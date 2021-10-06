@@ -128,6 +128,8 @@ func (t *transport) RoundTrip(r *http.Request) (*http.Response, error) {
 		return nil, trace.Wrap(err)
 	}
 
+	resp.Header.Set("Access-Control-Allow-Origin", "*")
+
 	return resp, nil
 }
 

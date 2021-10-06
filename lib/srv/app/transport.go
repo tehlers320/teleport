@@ -267,6 +267,7 @@ func (t *transport) needsPathRedirect(r *http.Request) (string, bool) {
 
 // rewriteResponse applies any rewriting rules to the response before returning it.
 func (t *transport) rewriteResponse(resp *http.Response) error {
+	resp.Header.Set("Access-Control-Allow-Origin", "*")
 	switch {
 	case t.c.rewrite != nil && len(t.c.rewrite.Redirect) > 0:
 		err := t.rewriteRedirect(resp)
