@@ -139,6 +139,7 @@ func NewAdminRole() types.Role {
 	role.SetLogins(types.Allow, []string{teleport.TraitInternalLoginsVariable, teleport.Root})
 	role.SetKubeUsers(types.Allow, []string{teleport.TraitInternalKubeUsersVariable})
 	role.SetKubeGroups(types.Allow, []string{teleport.TraitInternalKubeGroupsVariable})
+	role.SetWindowsLogins(types.Allow, []string{teleport.Administrator})
 	return role
 }
 
