@@ -163,3 +163,9 @@ resources: {}
 # Tolerations for pod assignment
 # https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
 tolerations: []
+
+# extraEnv sets additional environment variables inside the chart's container
+extraEnv: []
+# extraEnv:
+#  - name: SSL_CERT_DIR
+#    value: /etc/teleport-tls:/etc/ssl/certs
